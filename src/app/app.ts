@@ -1,12 +1,13 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { provideRouter, RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { signinComponent } from './signin/signin';
+import { SignupComponent } from "./signup/signup";
 
 @Component({
+  standalone: true,
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  imports: [CommonModule, RouterModule],
+  templateUrl: './app.html'
 })
-export class App {
-  protected readonly title = signal('signin');
-}
+export class App { }
